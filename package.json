@@ -1,6 +1,6 @@
 {
   "name": "disable-browser-back-navigation",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description":
     "It disables(read override) browser's native back button navigation",
   "homepage": "",
