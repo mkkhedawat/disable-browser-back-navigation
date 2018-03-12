@@ -1,0 +1,90 @@
+{
+  "name": "disable-browser-back-navigation",
+  "version": "0.0.1",
+  "description": "It disables(read override) browser's native back button navigation",
+  "homepage": "",
+  "author": {
+    "name": "Manish Kumar Khedawat",
+    "email": "writetomansa@gmail.com",
+    "url": "mkkhedawat.com"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    "disable back button",
+    "es6",
+    "node_module"
+  ],
+  "devDependencies": {
+    "@storybook/react": "^3.3.15",
+    "@storybook/storybook-deployer": "~2.3.0",
+    "babel-cli": "~6.26.0",
+    "babel-core": "~6.26.0",
+    "eslint": "~4.18.2",
+    "eslint-config-prettier": "~2.9.0",
+    "eslint-config-xo": "~0.20.1",
+    "eslint-plugin-prettier": "~2.6.0",
+    "husky": "~0.14.3",
+    "lint-staged": "~7.0.0",
+    "np": "~2.20.1",
+    "nsp": "~3.2.1",
+    "prettier": "~1.11.1",
+    "react": "~16.2.0",
+    "react-dom": "~16.2.0",
+    "rimraf": "~2.6.1"
+  },
+  "scripts": {
+    "prepublish": "nsp check",
+    "pretest": "eslint .",
+    "precommit": "lint-staged",
+    "start": "npm run storybook",
+    "build": "rimraf lib && babel src --out-dir lib --ignore test.js --copy-files",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
+    "publish": "np"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "globals": {
+      "window": true,
+      "document": true
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "printWidth": 90
+        }
+      ]
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "repository": "mkkhedawat/disable-browser-back-navigation",
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  }
+}
