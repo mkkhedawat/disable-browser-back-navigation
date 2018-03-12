@@ -35,7 +35,7 @@ const overrideBrowserNavigaion = () => {
   if (document.readyState === 'complete') {
     addHashBangToUrl();
   } else {
-    window.onload = (window.onload || (()=> {})).attachFunctionSeq(addHashBangToUrl);
+    window.onload = (window.onload || (() => {})).attachFunctionSeq(addHashBangToUrl);
   }
 };
 
